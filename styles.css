@@ -1,0 +1,63 @@
+*{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-family: 'Poppins', sans-serif;
+	box-sizing: border-box;
+}
+
+.container{
+	height: 100%;
+	width: 100%;
+	min-height: 100vh;
+	background: linear-gradient(120deg, #FFFFFF, #95C7FF);
+	padding: 10px;
+}
+
+/*Div for the whole calculator body, contains all the other divs for the calculator*/
+.calc-container{
+	height: 90%;
+	width: 35%;
+	background-color: #263544;
+	margin: 50px auto 20px;
+	padding: 20px 30px 70px;
+	border-radius: 8px;
+}
+
+/*Div containing the  calculator screen div and logo div at the top of the calculator*/
+.top-container{
+	height: 28%;
+	width: 100%;
+	padding: 20px;
+	background-color: black;
+	border-radius: 15px;
+}
+
+/*Div for the logo*/
+.logo-container{
+	height: 28%;
+	width: 100%;
+	font-size: 24px;
+	color:bisque;
+}
+
+/* Used for the logo container div to put text on the left and right side */
+.div-left{
+	float:left;
+	margin: 4px;
+}
+.div-right{
+	float:right;
+	text-align: right;
+	margin: 4px;
+}
+
+.screen-container{
+	height: 72%;
+	width: 100%;
+	background-color: #FFFFFF;
+	border-style: solid;
+	border-color:#959595;
+	border-width: 5px;
+	border-radius: 10px;
+}
