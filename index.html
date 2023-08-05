@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Scientific Calculator</title>
 	<link rel="stylesheet" href="styles.css">
+	<script src="script.js" defer></script>
 </head>
 <body>
 	<div class="container">
@@ -11,18 +13,59 @@
 			<div class="top-container">
 				<div class="logo-container">
 					<div class="div-left">
-						ELVIS
+						ONTARIO INSTRUMENTS
 					</div>
 					<div class="div-right">
 						EP-30Xa
 					</div>
 				</div>
 				<div class="screen-container">
-					
+					<div data-previous-operation class="previous-operation">555</div>
+					<div data-current-operation class="current-operation"></div>
+				</div>
+			</div>
+			<div class="upper-half">
+				<div class="button-container1">
+					<button data-shift class="button1">Shift</button>
+					<button data-delete class="button1">Delete</button>
+					<button data-log class="button1">log</button>
+					<button data-ln class="button1">ln</button>
+				</div>
+			</div>
+			<div class="lower-half">
+				<div class="div-left2">
+					<button data-pi class="button2">π</button>
+					<button data-inverse class="button2">x^-1</button>
+					<button data-square class="button2">x^2</button>
+					<button data-exponent class="button2">^</button>
+					<button data-openbracket class="button2">(</button>
+					<button data-closebracket class="button2">)</button>
+					<button data-sin class="button2">sin</button>
+					<button data-cos class="button2">cos</button>
+					<button data-tan class="button2">tan</button>
+					<button data-number class="button2">7</button>
+					<button data-number class="button2">8</button>
+					<button data-number class="button2">9</button>
+					<button data-number class="button2">4</button>
+					<button data-number class="button2">5</button>
+					<button data-number class="button2">6</button>
+					<button data-number class="button2">1</button>
+					<button data-number class="button2">2</button>
+					<button data-number class="button2">3</button>
+					<button data-number class="button2">0</button>
+					<button data-number="" class="button2">.</button>
+					<button data-negative class="button2">(-)</button>
+				</div>
+				<div class="div-right2">
+					<button data-clear class="button1">Clear</button>
+					<button data-operation class="button1">÷</button>
+					<button data-operation class="button1">x</button>
+					<button data-operation class="button1">-</button>
+					<button data-operation class="button1">+</button>
+					<button data-equals class="button1">=</button>
 				</div>
 			</div>
 		</div>
 	</div>
 </body>
-</html>
 </html>
