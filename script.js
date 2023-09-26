@@ -12,11 +12,14 @@ class Calculator {
 	}
 
 	delete() {
-
+		this.currentOperation = this.currentOperation.toString().slice(0,-1);
 	}
 
 	appendNumber(number) {
+
+		/* Check for decimal, cannot put in two or more decimal points */
 		if (number === '.' && this.currentOperation.includes('.')) return;
+		console.log(number);
 		this.currentOperation = this.currentOperation.toString() + number.toString();
 	}
 
@@ -58,11 +61,14 @@ class Calculator {
 	}
 
 	updateDisplay() {
-
-		console.log('current: ' + this.currentOperation);
-		console.log('prev: ' + this.previousOperation);
-		this.currentOperationElement.innerText = this.currentOperation;
-		this.previousOperationElement.innerText = this.previousOperation;
+		this.currentOperationElement.innerText = this.currentOperation
+		if (this.operation != null) {
+			console.log('cat')
+			this.previousOperationElement.innerText = this.previousOperation + " " + this.operation;
+		} else {
+			console.log('Whale')
+			this.previousOperationElement.innerText = '';
+		}
 		
 	}
 }
@@ -81,9 +87,6 @@ const squareButton = document.querySelectorAll('[data-square]')
 const exponentButton = document.querySelectorAll('[data-exponent]')
 const openBracketButton = document.querySelectorAll('[data-openbracket]')
 const closeBracketButton = document.querySelectorAll('[data-closebracket]')
-const sinButton = document.querySelectorAll('[data-sin]')
-const cosButton = document.querySelectorAll('[data-cos]')
-const tanButton = document.querySelectorAll('[data-tan]')
 const negativeButton = document.querySelectorAll('[data-negative]')
 
 const previousOperationElement = document.querySelector('[data-previous-operation]')
@@ -96,7 +99,6 @@ numberButtons.forEach(button => {
 	button.addEventListener('click', () => {
 		calculator.appendNumber(button.innerText);
 		calculator.updateDisplay();
-		console.log('number')
 	})
 })
 
@@ -105,7 +107,6 @@ operationButtons.forEach(button => {
 	button.addEventListener('click', () => {
 		calculator.chooseOperation(button.innerText);
 		calculator.updateDisplay();
-		console.log('op')
 	})
 })
 
@@ -113,7 +114,6 @@ equalsButton.forEach(button => {
 	button.addEventListener('click', () => {
 		calculator.compute();
 		calculator.updateDisplay();
-		console.log('equals')
 	})
 })
 
@@ -122,6 +122,12 @@ clearButton.forEach(button => {
 	button.addEventListener('click', () => {
 		calculator.clear();
 		calculator.updateDisplay();
-		
+	})
+})
+
+delButton.forEach(button => {
+	button.addEventListener('click', () => {
+		calculator.delete();
+		calculator.updateDisplay();
 	})
 })
